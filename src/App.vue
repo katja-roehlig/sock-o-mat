@@ -1,23 +1,82 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <!-- <router-link to="/about">About</router-link>-->
-    <router-link :to="{ name: 'create' }">Neue Socke</router-link>|
-    <router-link :to="{ name: 'overview' }">Überblick</router-link>|
-    <router-link :to="{ name: 'detail' }">Einzelne Socke</router-link>
-  </nav>
   <router-view />
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      socks: [
+        {
+          title: "Socke #1",
+          img: "http://picum.photos/50",
+          size: 39,
+          mesh: 60,
+          cuff: "2re, 2li",
+          heel: "Bumerangferse ohne Zwischenrunden",
+          point: "Sternchenspitze",
+          wool: "4 fädig, Lana Grossa hand-dyed",
+          pattern: "Gundel",
+          specials: "Vor der Ferse 3x 2M in jeder 2. Runde zunehmen",
+        },
+        {
+          title: "Socke #2",
+          img: "http://picum.photos/50",
+          size: 40,
+          mesh: 64,
+          cuff: "1re verschr, 2li",
+          heel: "Käppchenferse",
+          point: "Bandspitze",
+          wool: "4 fädig, ",
+          pattern: [
+            "Zimtwaffel",
+            "https://www.youtube.com/watch?v=OSvraBmW0BU",
+          ],
+          specials: "",
+        },
+      ],
+    };
+  },
+};
+</script>
+
 <style>
+/* custom-properties ***** */
+:root {
+  --basic-color: #fdc921;
+  --contrast-color: #2997be;
+  --main-bg-color: #fae588;
+  --bg-color: white;
+  --text-color: #000000;
+  --accent-color: #7e0101;
+}
+* {
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-color: var(--main-bg-color);
+  margin: 0;
+}
+/****Font-Styling********************************************************************** */
+@font-face {
+  font-family: "Orbitron";
+  src: url("@/assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("@/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
+  font-weight: 400;
+}
+h1 {
+  font-family: "Orbitron", sans-serif;
+}
+html {
+  font-family: "SourceSansPro";
 }
 
+/*Navigation-Style********************************************************************** */
 nav {
   padding: 30px;
 }
