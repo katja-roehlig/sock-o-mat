@@ -54,7 +54,6 @@ export default {
   box-sizing: border-box;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   background-color: var(--main-bg-color);
   margin: 0;

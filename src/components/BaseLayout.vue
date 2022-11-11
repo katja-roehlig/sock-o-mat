@@ -26,11 +26,11 @@ export default {
 .button-style {
   background-color: var(--basic-color);
   color: var(--bg-color);
-  padding: 0.5em 0.6em 0.4em 0.6em;
+  padding: 0.6em 0.7em 0.6em 0.8em;
   border-radius: 0.4em;
   border: none;
   font-size: 0.8em;
   font-weight: bold;
-  box-shadow: 2px 2px 3px var(--contrast-color);
+  box-shadow: 2px 2px 0px var(--contrast-color);
 }
 </style>

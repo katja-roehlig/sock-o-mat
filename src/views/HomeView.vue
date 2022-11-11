@@ -3,7 +3,11 @@
     <div class="home">
       <img src="https://picsum.photos/200" alt="ein random Foto" />
     </div>
-    <button class="button-style home-button">Neue Socke</button>
+    <button class="button-style home-button">
+      <router-link :to="{ name: 'create' }" class="button-link"
+        >Neue Socke</router-link
+      >
+    </button>
   </BaseLayout>
 </template>
 
@@ -21,5 +25,8 @@ export default {
 }
 .home-button {
   margin-bottom: 2em;
+}
+.button-link {
+  all: unset;
 }
 </style>

@@ -36,15 +36,15 @@ export default {
 <style scoped>
 h1 {
   color: var(--bg-color);
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 900;
-  padding-block: 0.7em 0.3em;
+  padding-block: 0.7em 0.4em;
   margin: 0;
   text-shadow: 2px 2px 0px var(--contrast-color);
 }
 h2 {
-  font-size: 0.8em;
-  padding-block: 0.5em;
+  font-size: 0.9em;
+  padding-block: 0.6em;
   margin: 0;
 }
 
@@ -71,7 +71,7 @@ h2 {
 }
 .nav {
   position: absolute;
-  top: 3.65rem;
+  top: 4.1rem;
   left: 8%;
 }
 </style>
