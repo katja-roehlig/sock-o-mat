@@ -1,12 +1,15 @@
 <template>
-  <BaseLayout msg="Erstelle eine neue Socke"> </BaseLayout>
+  <BaseLayout msg="Erstelle ein neues Sockenprojekt"
+    ><CreateComponent
+  /></BaseLayout>
 </template>
 
 <script>
 import BaseLayout from "@/components/BaseLayout.vue";
+import CreateComponent from "@/components/CreateComponent.vue";
 
 export default {
   name: "CreateView",
-  components: { BaseLayout },
+  components: { BaseLayout, CreateComponent },
 };
 </script>
