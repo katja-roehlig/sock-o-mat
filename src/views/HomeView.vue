@@ -1,7 +1,12 @@
 <template>
   <BaseLayout msg="Sockenstricken mal anders">
     <div class="home">
-      <img src="https://picsum.photos/200" alt="ein random Foto" />
+      <img
+        src="@/assets/img/Socke-Opal-3.png"
+        width="200"
+        height="300"
+        alt="ein random Foto"
+      />
     </div>
     <button class="button-style home-button">
       <router-link :to="{ name: 'create' }" class="button-link"
