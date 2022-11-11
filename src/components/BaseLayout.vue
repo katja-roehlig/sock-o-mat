@@ -33,4 +33,10 @@ export default {
   font-weight: bold;
   box-shadow: 2px 2px 0px var(--contrast-color);
 }
+.button-style:hover {
+  background-color: var(--contrast-color);
+}
+.button-link {
+  all: unset;
+}
 </style>

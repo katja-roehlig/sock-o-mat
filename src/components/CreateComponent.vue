@@ -35,13 +35,13 @@
         />
       </div>
       <div>
-        <label for="mesh" class="label-style">Maschen: </label><br />
+        <label for="stitches" class="label-style">Maschen: </label><br />
         <input
           type="text"
-          id="mesh"
-          name="mesh"
+          id="stitches"
+          name="stitches"
           class="number-input"
-          v-model="mesh"
+          v-model="stitches"
         />
       </div>
     </div>
@@ -69,14 +69,14 @@
       />
     </div>
     <div class="input-container">
-      <label for="point" class="label-style">Spitze </label><br />
+      <label for="toe" class="label-style">Spitze </label><br />
       <input
         type="text"
-        name="point"
-        id="point"
+        name="toe"
+        id="toe"
         class="input-style"
         size="10"
-        v-model="point"
+        v-model="toe"
       />
     </div>
 
@@ -145,9 +145,9 @@ export default {
     return {
       title: "",
       size: "",
-      mesh: "",
+      stitches: "",
       cuff: "",
-      point: "",
+      toe: "",
       heel: "",
       wool: "",
       pattern: "",
@@ -170,9 +170,9 @@ export default {
         id: this.createId(),
         image: newImage,
         size: this.size,
-        mesh: this.mesh,
+        stitches: this.stitches,
         cuff: this.cuff,
-        point: this.point,
+        toe: this.toe,
         heel: this.heel,
         wool: this.wool,
         pattern: this.pattern,
