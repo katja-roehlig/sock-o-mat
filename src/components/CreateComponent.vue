@@ -68,7 +68,6 @@
         v-model="heel"
       />
     </div>
-
     <div class="input-container">
       <label for="point" class="label-style">Spitze </label><br />
       <input
@@ -158,13 +157,18 @@ export default {
   },
   methods: {
     async saveProject() {
-      //const data = new FormData();
-      const imageFile = this.$refs.image.files[0];
-      const base64Img = await convertBase64(imageFile);
-      console.log(base64Img);
+      let imageFile = this.$refs.image.files[0];
+      let newImage = "null";
+      if (imageFile === undefined) {
+        newImage = "@/assets/img/Socke-Opal-3.png";
+      } else {
+        newImage = await convertBase64(imageFile);
+      }
+
       const sockProject = {
         title: this.title,
-        image: base64Img,
+        id: this.createId(),
+        image: newImage,
         size: this.size,
         mesh: this.mesh,
         cuff: this.cuff,
@@ -175,8 +179,16 @@ export default {
         specials: this.specials,
       };
       this.socks.push(sockProject);
+      console.log(this.socks);
       localStorage.setItem("safeSocks", JSON.stringify(this.socks));
       this.$router.push("/");
+    },
+
+    createId() {
+      return (
+        this.title.replaceAll(" ", "").toLowerCase() +
+        Math.floor(Math.random() * 10000)
+      );
     },
   },
 };
