@@ -1,10 +1,15 @@
 <template>
-  <h1>Übersicht</h1>
+  <BaseLayout msg="Übersicht über deine Projekte">
+    <SockItem />
+  </BaseLayout>
 </template>
+
 <script>
+import BaseLayout from "@/components/BaseLayout.vue";
+import SockItem from "@/components/SockItem.vue";
+
 export default {
-  data() {
-    return {};
-  },
+  name: "CreateView",
+  components: { BaseLayout, SockItem },
 };
 </script>

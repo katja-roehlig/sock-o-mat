@@ -13,6 +13,11 @@
         >Neue Socke</router-link
       >
     </button>
+    <button class="button-style home-button">
+      <router-link :to="{ name: 'overview' }" class="button-link"
+        >Übersicht</router-link
+      >
+    </button>
   </BaseLayout>
 </template>
 
@@ -30,8 +35,5 @@ export default {
 }
 .home-button {
   margin-bottom: 2em;
-}
-.button-link {
-  all: unset;
 }
 </style>
