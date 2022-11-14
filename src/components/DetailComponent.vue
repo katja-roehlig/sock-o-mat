@@ -1,10 +1,18 @@
 <template>
+  <div class="image-zoom" :class="{ visible: isInvisible }" @click="zoomImage">
+    <img
+      :src="sock.image"
+      style="width: 50%; height: auto"
+      alt="Leider kein Foto!"
+    />
+  </div>
   <article class="detail-container">
     <div class="foto-style">
       <img
         :src="sock.image"
         style="width: 100%; height: 100%; object-fit: cover"
         alt="Hier fehlt ein Foto"
+        @click="zoomImage"
       />
     </div>
     <div class="size">
@@ -64,18 +72,22 @@ export default {
     return {
       socks: JSON.parse(localStorage.getItem("safeSocks")),
       sock: {},
+      isInvisible: true,
     };
   },
+
   methods: {
     getSubtitle() {
       this.$emit("subtitleSock", this.sock?.title);
+    },
+    zoomImage() {
+      this.isInvisible = !this.isInvisible;
     },
   },
   created() {
     this.sock = this.socks.find(
       (element) => element.id === this.$route.params.id
     );
-    console.log(this.sock);
   },
   emits: ["subtitleSock"],
 };
@@ -157,5 +169,17 @@ export default {
   padding-block: 1em 2em;
   background-color: var(--bg-color);
   border-top: 2px solid var(--accent-color);
+}
+.image-zoom {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 100vw;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+}
+.visible {
+  display: none;
 }
 </style>
