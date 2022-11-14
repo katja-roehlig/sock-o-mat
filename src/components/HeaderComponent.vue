@@ -34,18 +34,23 @@ export default {
 </script>
 
 <style scoped>
+header {
+  text-align: center;
+}
 h1 {
   color: var(--bg-color);
-  font-size: 1.6em;
+  font-size: 1.7em;
   font-weight: 900;
-  padding-block: 0.7em 0.4em;
+  padding-block: 0.7em 0.5em;
   margin: 0;
   text-shadow: 2px 2px 0px var(--contrast-color);
 }
+
 h2 {
-  font-size: 0.9em;
+  font-size: 1.1em;
   padding-block: 0.6em;
   margin: 0;
+  color: var(--contrast-color);
 }
 
 .title {
@@ -71,7 +76,7 @@ h2 {
 }
 .nav {
   position: absolute;
-  top: 4.1rem;
+  top: 4.8rem;
   left: 8%;
 }
 </style>

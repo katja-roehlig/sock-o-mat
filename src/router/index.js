@@ -20,8 +20,9 @@ const routes = [
     name: "overview",
     component: OverView,
   },
+
   {
-    path: "/detail",
+    path: "/detail/:id",
     name: "detail",
     component: DetailView,
   },

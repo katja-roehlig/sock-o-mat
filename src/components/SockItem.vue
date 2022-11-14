@@ -9,7 +9,14 @@
 
         <span class="title-style">{{ sock.title }}</span>
 
-        <button class="button-style details">Details</button>
+        <button class="button-style details">
+          <router-link
+            :to="{ name: 'detail', params: { id: sock.id } }"
+            class="button-link"
+          >
+            Details</router-link
+          >
+        </button>
         <button class="delete">✕</button>
       </article>
     </li>
@@ -25,11 +32,6 @@ export default {
     return {
       socks: JSON.parse(localStorage.getItem("safeSocks")),
     };
-  },
-  methods: {
-    showMe() {
-      console.log(this.socks);
-    },
   },
 };
 </script>
