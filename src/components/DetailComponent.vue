@@ -1,19 +1,16 @@
 <template>
-  <div class="image-zoom" :class="{ visible: isInvisible }" @click="zoomImage">
-    <img
-      :src="sock.image"
-      style="width: 50%; height: auto"
-      alt="Leider kein Foto!"
-    />
-  </div>
   <article class="detail-container">
-    <div class="foto-style">
-      <img
-        :src="sock.image"
-        style="width: 100%; height: 100%; object-fit: cover"
-        alt="Hier fehlt ein Foto"
-        @click="zoomImage"
-      />
+    <div class="foto-container">
+      <div class="foto-box">
+        <img
+          :src="sock.image"
+          style="width: 100%; height: 100%; object-fit: contain"
+          alt="Hier fehlt ein Foto"
+          :class="{ visible: isVisible }"
+          @click="zoomImage"
+          class="foto-style"
+        />
+      </div>
     </div>
     <div class="size">
       <h3>Größe:</h3>
@@ -65,6 +62,8 @@
   </div>
 </template>
 
+<!-- Script ******************************************************-->
+
 <script>
 export default {
   name: "DetailComponent",
@@ -72,7 +71,7 @@ export default {
     return {
       socks: JSON.parse(localStorage.getItem("safeSocks")),
       sock: {},
-      isInvisible: true,
+      isVisible: false,
     };
   },
 
@@ -81,7 +80,7 @@ export default {
       this.$emit("subtitleSock", this.sock?.title);
     },
     zoomImage() {
-      this.isInvisible = !this.isInvisible;
+      this.isVisible = !this.isVisible;
     },
   },
   created() {
@@ -92,6 +91,8 @@ export default {
   emits: ["subtitleSock"],
 };
 </script>
+
+<!-- Style **********************************************************-->
 
 <style scoped>
 .detail-container {
@@ -105,7 +106,8 @@ export default {
   grid-template-areas:
     "area1 area2 area3"
     "area1 area4 area4"
-    "area5 area6 area6"
+    "area1 area6 area6"
+    "area1 area5 area5"
     "area7 area7 area7"
     "area8 area8 area8"
     "area9 area9 area9";
@@ -114,13 +116,18 @@ export default {
 .title {
   background-color: var(--basic-color);
 }
-.foto-style {
-  width: 40vmin;
-  height: 30vmin;
+.foto-container {
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
-  box-shadow: 2px 2px 3px var(--basic-color);
-  border: 1px solid var(--basic-color);
   grid-area: area1;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.foto-style {
+  box-shadow: 2px 2px 3px var(--contrast-color);
+  border: 1px solid var(--contrast-color);
 }
 .size {
   grid-area: area2;
@@ -180,6 +187,8 @@ export default {
   position: absolute;
 }
 .visible {
-  display: none;
+  transition: transform 1s ease-out;
+  transform: scale(2);
+  transform-origin: 0% 0%;
 }
 </style>
