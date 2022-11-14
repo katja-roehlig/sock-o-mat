@@ -1,127 +1,106 @@
 <template>
   <form class="form-container" @submit.prevent="saveProject">
-    <div class="input-container title-input">
-      <label for="title" class="label-style">Name: </label><br />
-      <input
-        type="text"
-        name="title"
-        id="title"
-        size="35"
-        placeholder="Gib deinem Sockenprojekt einen Namen"
-        v-model="title"
-      />
-    </div>
-    <div class="foto-style">
-      <label for="image" class="label-style">Foto deiner Socke</label>
+    <label for="title" class="visually-hidden title-label">Name: </label>
+    <input
+      type="text"
+      name="title"
+      id="title"
+      class="input-style title-text"
+      placeholder="Gib deinem Sockenprojekt einen Namen"
+      required
+      v-model="title"
+    />
 
+    <label for="image" class="foto-label">Foto auswählen: </label>
+    <div class="input-style foto-container">
       <input
         type="file"
         id="image"
         name="image"
         accept="image/png, image/jpeg"
-        class="input-foto"
         ref="image"
       />
     </div>
-    <div class="number-container">
-      <div>
-        <label for="size" class="label-style">Größe: </label><br />
-        <input
-          type="text"
-          id="size"
-          name="size"
-          class="number-input"
-          v-model="size"
-        />
-      </div>
-      <div>
-        <label for="stitches" class="label-style">Maschen: </label><br />
-        <input
-          type="text"
-          id="stitches"
-          name="stitches"
-          class="number-input"
-          v-model="stitches"
-        />
-      </div>
-    </div>
-    <div class="input-container">
-      <label for="cuff" class="label-style">Bündchen </label><br />
-      <input
-        type="text"
-        name="cuff"
-        id="cuff"
-        class="input-style"
-        size="10"
-        v-model="cuff"
-      />
-    </div>
 
-    <div class="input-container">
-      <label for="heel" class="label-style">Ferse </label><br />
-      <input
-        type="text"
-        name="heel"
-        id="heel"
-        class="input-style"
-        size="10"
-        v-model="heel"
-      />
-    </div>
-    <div class="input-container">
-      <label for="toe" class="label-style">Spitze </label><br />
-      <input
-        type="text"
-        name="toe"
-        id="toe"
-        class="input-style"
-        size="10"
-        v-model="toe"
-      />
-    </div>
+    <label for="size" class="size-label">Größe: </label>
+    <input
+      type="text"
+      id="size"
+      name="size"
+      class="input-style size-text"
+      size="5"
+      v-model="size"
+    />
 
-    <div class="input-container wool">
-      <label for="wool" class="label-style">Wolle: </label><br />
-      <input
-        type="text"
-        name="wool"
-        id="wool"
-        class="input-style"
-        size="10"
-        v-model="wool"
-      />
-    </div>
+    <label for="stitches" class="stitches-label">Maschen: </label>
+    <input
+      type="text"
+      id="stitches"
+      name="stitches"
+      class="input-style stitches-text"
+      v-model="stitches"
+      size="5"
+    />
 
-    <div class="input-container pattern">
-      <label for="pattern" class="label-style">Muster: </label><br />
-      <input
-        type="text"
-        name="pattern"
-        id="pattern"
-        class="input-style"
-        size="10"
-        v-model="pattern"
-      />
-    </div>
-    <div class="input-container specials">
-      <label for="specials" class="label-style">Besonderheiten: </label><br />
-      <input
-        type="text"
-        name="specials"
-        id="specials"
-        class="input-style"
-        size="10"
-        v-model="specials"
-      />
-    </div>
-    <button class="button-style">Speichern</button>
-  </form>
+    <label for="cuff" class="cuff-label">Bündchen </label>
+    <input
+      type="text"
+      name="cuff"
+      id="cuff"
+      class="input-style cuff-text"
+      v-model="cuff"
+    />
 
-  <div class="button-container">
-    <button class="button-style">
+    <label for="heel" class="heel-label">Ferse </label>
+    <input
+      type="text"
+      name="heel"
+      id="heel"
+      class="input-style heel-text"
+      v-model="heel"
+    />
+
+    <label for="toe" class="toe-label">Spitze </label>
+    <input
+      type="text"
+      name="toe"
+      id="toe"
+      class="input-style toe-text"
+      v-model="toe"
+    />
+
+    <label for="wool" class="wool-label">Wolle: </label>
+    <textarea
+      type="text"
+      name="wool"
+      id="wool"
+      class="input-style wool-text"
+      rows="1"
+      v-model="wool"
+    />
+
+    <label for="pattern" class="pattern-label">Muster: </label>
+    <textarea
+      name="pattern"
+      id="pattern"
+      class="input-style pattern-text"
+      rows="1"
+      v-model="pattern"
+    />
+
+    <label for="specials" class="specials-label">Besonderheiten: </label>
+    <textarea
+      class="input-style specials-text"
+      name="specials"
+      id="specials"
+      v-model="specials"
+    />
+
+    <button class="button-style button-safe">Speichern</button>
+    <button class="button-style button-home" @click.prevent>
       <router-link to="/" class="button-link">⏎</router-link>
     </button>
-  </div>
+  </form>
 </template>
 <!-- Script ******************************************************* -->
 <script>
@@ -152,7 +131,7 @@ export default {
       wool: "",
       pattern: "",
       specials: "",
-      socks: [],
+      socks: JSON.parse(localStorage.getItem("safeSocks")) || [],
     };
   },
   methods: {
@@ -160,7 +139,7 @@ export default {
       let imageFile = this.$refs.image.files[0];
       let newImage = "null";
       if (imageFile === undefined) {
-        newImage = "@/assets/img/Socke-Opal-3.png";
+        newImage = "/img/Socke-Opal-3.png";
       } else {
         newImage = await convertBase64(imageFile);
       }
@@ -181,7 +160,7 @@ export default {
       this.socks.push(sockProject);
       console.log(this.socks);
       localStorage.setItem("safeSocks", JSON.stringify(this.socks));
-      this.$router.push("/");
+      this.$router.push("/detail/" + sockProject.id);
     },
 
     createId() {
@@ -196,66 +175,147 @@ export default {
 
 <!-- Style ****************************************************** -->
 <style scoped>
-input {
-  height: 2em;
-  border: 1px solid var(--basic-color);
+label {
+  font-size: 0.9em;
 }
-
-.label-style {
-  font-size: 0.8em;
+textarea {
+  overflow: visible;
 }
-.input-style {
-  width: 40vmin;
-}
-.foto-style {
-  width: 40vmin;
-  height: 30vmin;
-  border: 2px solid var(--basic-color);
-  background-color: rgba(128, 128, 128, 0.311);
-  display: inline-block;
-  grid-row: span 2;
-}
-.input-foto {
-  all: unset;
-  display: inline-block;
-  width: 30vmin;
-  font-size: 0.8em;
+textarea:focus,
+input:focus {
+  outline: none;
+  box-shadow: 2px 2px 3px var(--contrast-color);
+  border: 1px solid var(--contrast-color);
 }
 
 .form-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   padding: 1.5em 2em;
-  grid-row-gap: 0.8em;
-  grid-column-gap: 1em;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-column-gap: 0.5em;
   align-items: start;
   justify-items: start;
+  grid-template-areas:
+    "title-label title-label title-label"
+    "title-text title-text title-text"
+    "foto-label foto-label foto-label"
+    "foto-container  foto-container foto-container"
+    "cuff-label size-label stitches-label"
+    "cuff-text size-text stitches-text"
+    "toe-label heel-label heel-label"
+    "toe-text heel-text heel-text"
+    "wool-label wool-label wool-label"
+    "wool-text wool-text wool-text"
+    "pattern-label pattern-label pattern-label"
+    "pattern-text pattern-text pattern-text"
+    "specials-label specials-label specials-label"
+    "specials-text specials-text specials-text"
+    "button-safe button-home button-home";
 }
-.title-input {
-  grid-column: span 2;
+.title-label {
+  grid-area: title-label;
 }
-.number-container {
-  display: flex;
-  gap: 1.5em;
+.title-text {
+  grid-area: title-text;
+  width: 100%;
 }
-.number-input {
-  width: 15vmin;
+.foto-label {
+  grid-area: foto-label;
 }
-.wool,
-.pattern,
-.specials {
-  grid-column: span 2;
+.foto-container {
+  grid-area: foto-container;
+  font-size: 0.7em;
+  width: 100%;
+  padding-block: 1em;
+  height: 80%;
+  margin-bottom: 2em;
 }
-.button-container {
-  display: flex;
-  justify-content: space-around;
+.size-label {
+  grid-area: size-label;
+}
+.size-text {
+  grid-area: size-text;
+  width: 100%;
+}
+.stitches-label {
+  grid-area: stitches-label;
+}
+.stitches-text {
+  grid-area: stitches-text;
+  width: 100%;
+}
+.cuff-label {
+  grid-area: cuff-label;
+}
+.cuff-text {
+  grid-area: cuff-text;
+  width: 100%;
+}
+.heel-label {
+  grid-area: heel-label;
+}
+.heel-text {
+  grid-area: heel-text;
+  width: 100%;
+}
+.toe-label {
+  grid-area: toe-label;
+}
+.toe-text {
+  grid-area: toe-text;
+  width: 100%;
+}
+.wool-label {
+  grid-area: wool-label;
+}
+.wool-text {
+  grid-area: wool-text;
+  width: 100%;
+}
+.pattern-label {
+  grid-area: pattern-label;
+}
+.pattern-text {
+  grid-area: pattern-text;
+  width: 100%;
+}
+.specials-label {
+  grid-area: specials-label;
+}
+.specials-text {
+  grid-area: specials-text;
+  width: 100%;
+}
+.input-style {
+  background-color: var(--bg-color);
+  padding: 0.4em 0.6em;
+  margin-bottom: 0.8em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px var(--basic-color);
+  border: 1px solid var(--basic-color);
+}
+
+.button-safe {
+  grid-area: button-safe;
+}
+.button-home {
+  grid-area: button-home;
 }
 .button-link {
   all: unset;
 }
-/*.input-container {
-  display: inline-block;
-}*/
+input::placeholder {
+  font-size: 0.8em;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
 /****IDs ******************************************* */
 </style>

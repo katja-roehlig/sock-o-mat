@@ -2,22 +2,25 @@
   <BaseLayout msg="Sockenstricken mal anders">
     <div class="home">
       <img
-        src="@/assets/img/Socke-Opal-3.png"
+        src="/img/Socke-Opal-3.png"
         width="200"
         height="300"
         alt="ein random Foto"
+        class="image"
       />
     </div>
-    <button class="button-style home-button">
-      <router-link :to="{ name: 'create' }" class="button-link"
-        >Neue Socke</router-link
-      >
-    </button>
-    <button class="button-style home-button">
-      <router-link :to="{ name: 'overview' }" class="button-link"
-        >Übersicht</router-link
-      >
-    </button>
+    <div class="button">
+      <button class="button-style home-button">
+        <router-link :to="{ name: 'create' }" class="button-link"
+          >Neue Socke</router-link
+        >
+      </button>
+      <button class="button-style home-button">
+        <router-link :to="{ name: 'overview' }" class="button-link"
+          >Übersicht</router-link
+        >
+      </button>
+    </div>
   </BaseLayout>
 </template>
 
@@ -32,8 +35,16 @@ export default {
 <style scoped>
 .home {
   margin-block: 2em;
+  text-align: center;
 }
 .home-button {
   margin-bottom: 2em;
+}
+.button {
+  display: flex;
+  justify-content: space-evenly;
+}
+.image {
+  border: 2px solid var(--basic-color);
 }
 </style>

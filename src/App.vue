@@ -39,9 +39,9 @@ export default {
       ],
     };
   },
-  created() {
+  /*created() {
     localStorage.setItem("safeSocks", JSON.stringify(this.socks));
-  },
+  },*/
 };
 </script>
 
@@ -49,6 +49,7 @@ export default {
 /* custom-properties ***** */
 :root {
   --basic-color: #fdc921;
+  --basic-color-darker: hsl(46, 98%, 46%);
   --contrast-color: #2997be;
   --main-bg-color: #fae588;
   --bg-color: white;
@@ -59,9 +60,9 @@ export default {
   box-sizing: border-box;
 }
 #app {
-  text-align: center;
   background-color: var(--main-bg-color);
   margin: 0;
+  min-height: 100vh;
 }
 /****Font-Styling********************************************************************** */
 @font-face {
