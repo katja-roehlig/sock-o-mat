@@ -1,7 +1,7 @@
 <template class="basic-container">
   <ul class="list">
     <li v-for="sock in socks" :key="sock.id">
-      <article class="item-container">
+      <article class="item-container frame">
         <!-- <img src="{{sock.image}}" alt="Oh no!" />-->
         <span class="sock-img">
           <img src="https://picsum.photos/seed/abc/60" alt="" />
@@ -21,10 +21,8 @@
       </article>
     </li>
   </ul>
-  <button class="button-style">
-    <router-link to="/" class="button-link">⏎</router-link>
-  </button>
 </template>
+
 <script>
 export default {
   name: "SockItem",
@@ -62,8 +60,7 @@ export default {
   align-items: center;
   justify-items: start;
   background-color: var(--bg-color);
-  margin: 1em 1.5em -0.5em 1.5em;
-  border: 2px solid var(--basic-color);
+  margin: 1.2em 1.5em -0.5em 1.5em;
 }
 .title-style {
   color: var(--contrast-color);
@@ -71,12 +68,12 @@ export default {
   padding-inline: 0.5em;
 }
 .delete {
-  /*box-shadow: 2px 2px 0px var(--accent-color);*/
   align-self: start;
   justify-self: end;
   background-color: var(--basic-color);
   color: var(--bg-color);
   border: none;
+  border-radius: 2px;
 }
 .delete:hover {
   background-color: var(--accent-color);
@@ -86,5 +83,12 @@ export default {
 }
 .sock-img {
   padding: 0.5em;
+}
+
+@media screen and (min-width: 460px) {
+  .item-container {
+    padding-block: 0.3em;
+    margin-bottom: 0.3em;
+  }
 }
 </style>

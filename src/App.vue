@@ -46,52 +46,5 @@ export default {
 </script>
 
 <style>
-/* custom-properties ***** */
-:root {
-  --basic-color: #fdc921;
-  --basic-color-darker: hsl(46, 98%, 46%);
-  --contrast-color: #2997be;
-  --main-bg-color: #fae588;
-  --bg-color: white;
-  --text-color: #000000;
-  --accent-color: #7e0101;
-}
-* {
-  box-sizing: border-box;
-}
-#app {
-  background-color: var(--main-bg-color);
-  margin: 0;
-  min-height: 100vh;
-}
-/****Font-Styling********************************************************************** */
-@font-face {
-  font-family: "Orbitron";
-  src: url("@/assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf");
-}
-@font-face {
-  font-family: "SourceSansPro";
-  src: url("@/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
-  font-weight: 400;
-}
-h1 {
-  font-family: "Orbitron", sans-serif;
-}
-html {
-  font-family: "SourceSansPro", sans-serif;
-}
-
-/*Navigation-Style********************************************************************** */
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import url("@/assets/main.css");
 </style>

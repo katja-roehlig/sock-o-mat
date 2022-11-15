@@ -90,7 +90,7 @@
 
     <label for="specials" class="specials-label">Besonderheiten: </label>
     <textarea
-      class="input-style specials-text"
+      class="input-style specials-text frame"
       name="specials"
       id="specials"
       v-model="specials"
@@ -189,6 +189,7 @@ input:focus {
 }
 
 .form-container {
+  background-color: var(--main-bg-color);
   padding: 1.5em 2em;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -288,11 +289,12 @@ input:focus {
 }
 .input-style {
   background-color: var(--bg-color);
-  padding: 0.4em 0.6em;
+  padding: 0.5em 0.6em;
   margin-bottom: 0.8em;
   border-radius: 5px;
   box-shadow: 2px 2px 3px var(--basic-color);
   border: 1px solid var(--basic-color);
+  line-height: 1.2em;
 }
 
 .button-safe {

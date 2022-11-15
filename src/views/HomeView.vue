@@ -9,18 +9,6 @@
         class="image"
       />
     </div>
-    <div class="button">
-      <button class="button-style home-button">
-        <router-link :to="{ name: 'create' }" class="button-link"
-          >Neue Socke</router-link
-        >
-      </button>
-      <button class="button-style home-button">
-        <router-link :to="{ name: 'overview' }" class="button-link"
-          >Übersicht</router-link
-        >
-      </button>
-    </div>
   </BaseLayout>
 </template>
 
@@ -34,17 +22,12 @@ export default {
 </script>
 <style scoped>
 .home {
-  margin-block: 2em;
   text-align: center;
+  margin-block: 10%;
 }
-.home-button {
-  margin-bottom: 2em;
-}
-.button {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 .image {
-  border: 2px solid var(--basic-color);
+  border: 2px solid var(--contrast-color);
+  border-radius: 7px;
 }
 </style>

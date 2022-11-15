@@ -41,7 +41,7 @@ h1 {
   color: var(--bg-color);
   font-size: 1.7em;
   font-weight: 900;
-  padding-block: 0.7em 0.5em;
+  padding-block: 0.8em 0.6em;
   margin: 0;
   text-shadow: 2px 2px 0px var(--contrast-color);
 }
@@ -75,8 +75,8 @@ h2 {
   color: var(--contrast-color);
 }
 .nav {
-  position: absolute;
-  top: 4.8rem;
+  position: fixed;
+  top: 5.1rem;
   left: 8%;
 }
 </style>
