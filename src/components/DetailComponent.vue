@@ -87,6 +87,7 @@ export default {
     this.sock = this.socks.find(
       (element) => element.id === this.$route.params.id
     );
+    this.getSubtitle();
   },
   emits: ["subtitleSock"],
 };
