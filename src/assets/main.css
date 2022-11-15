@@ -44,10 +44,10 @@ h3 {
 .button-style {
   background-color: var(--contrast-color-middle);
   color: var(--bg-color);
-  padding: 0.4em 0.9em 0.4em 0.9em;
+  padding: 0.5em 1em 0.5em 1em;
   border-radius: 0.6em;
   border: none;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: bold;
   box-shadow: inset 0px 0px 0px 1px var(--contrast-color-middle),
     inset 0px 0px 0px 2px var(--contrast-color-light);
