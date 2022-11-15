@@ -17,7 +17,7 @@
             Details</router-link
           >
         </button>
-        <button class="delete">✕</button>
+        <button class="delete" @click="deleteItem(sock.id)">✕</button>
       </article>
     </li>
   </ul>
@@ -31,7 +31,17 @@ export default {
   data() {
     return {
       socks: JSON.parse(localStorage.getItem("safeSocks")),
+      result: "",
     };
+  },
+  methods: {
+    deleteItem(currentId) {
+      this.result = confirm("Willst du das Projekt wirklich löschen?");
+      if (this.result) {
+        this.socks = this.socks.filter((element) => element.id !== currentId);
+      }
+      localStorage.setItem("safeSocks", JSON.stringify(this.socks));
+    },
   },
 };
 </script>
