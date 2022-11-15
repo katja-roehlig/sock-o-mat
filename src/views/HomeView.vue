@@ -3,11 +3,13 @@
     <div class="home">
       <img
         src="/img/Socke-Opal-3.png"
-        width="200"
-        height="300"
+        width="250"
+        height="400"
         alt="ein random Foto"
         class="image"
       />
+      <div class="button"></div>
+      <button class="button-style">Los geht´s</button>
     </div>
   </BaseLayout>
 </template>
@@ -29,5 +31,8 @@ export default {
 .image {
   border: 2px solid var(--contrast-color);
   border-radius: 7px;
+}
+.button {
+  padding-top: 2em;
 }
 </style>

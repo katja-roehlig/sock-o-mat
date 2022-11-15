@@ -17,7 +17,9 @@
 html {
   font-family: "SourceSansPro", sans-serif;
 }
-
+.size-main {
+  min-height: 100vh;
+}
 /****Font-Styling********************************************************************** */
 @font-face {
   font-family: "Orbitron";
@@ -62,9 +64,8 @@ h3 {
 }
 
 .footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  width: 100%;
 }
 .frame {
   border-radius: 5px;
@@ -74,6 +75,8 @@ h3 {
 #app {
   background-color: var(--contrast-color-light);
   margin: 0 auto;
+  /*width: 375px;
+  height: 667px;*/
+  max-width: 60ch;
   min-height: 100vh;
-  max-width: 80ch;
 }

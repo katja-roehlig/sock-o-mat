@@ -1,10 +1,17 @@
 <template class="basic-container">
   <ul class="list">
+    <li>
+      <SearchComponent @searchButton="searchSocks" />
+    </li>
     <li v-for="sock in socks" :key="sock.id">
       <article class="item-container frame">
         <!-- <img src="{{sock.image}}" alt="Oh no!" />-->
         <span class="sock-img">
-          <img src="https://picsum.photos/seed/abc/60" alt="" />
+          <img
+            :src="sock.image"
+            style="width: 60px; height: 60px; object-fit: cover"
+            alt="Oh nein!"
+          />
         </span>
 
         <span class="title-style">{{ sock.title }}</span>
@@ -24,12 +31,15 @@
 </template>
 
 <script>
+import SearchComponent from "@/components/SearchComponent.vue";
+
 export default {
   name: "SockItem",
+  components: { SearchComponent },
   data() {
     return {
       socks: JSON.parse(localStorage.getItem("safeSocks")),
-      result: "",
+      search: "",
     };
   },
   methods: {
@@ -39,6 +49,20 @@ export default {
         this.socks = this.socks.filter((element) => element.id !== currentId);
       }
       localStorage.setItem("safeSocks", JSON.stringify(this.socks));
+    },
+    searchSocks(result) {
+      this.search = result;
+      if (this.search === "") {
+        this.socks = JSON.parse(localStorage.getItem("safeSocks"));
+      } else {
+        this.socks = this.socks.filter(
+          (element) =>
+            element.pattern ||
+            element.heel ||
+            element.wool ||
+            element.toe === this.search
+        );
+      }
     },
   },
 };
@@ -87,8 +111,8 @@ export default {
 
 @media screen and (min-width: 460px) {
   .item-container {
-    padding-block: 0.3em;
-    margin-bottom: 0.3em;
+    padding-block: 0.1em;
+    margin-bottom: 0.001em;
   }
 }
 </style>

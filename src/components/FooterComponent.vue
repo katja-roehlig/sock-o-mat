@@ -56,14 +56,26 @@ export default {};
   top: -0.24em;
 }
 .link {
-  background-color: var(--bg-color);
-  color: var(--contrast-color);
   border-radius: 2em;
   height: 2.5em;
   width: 2.5em;
+  background-color: var(--bg-color);
+  color: var(--contrast-color);
   border: 2px solid var(--contrast-color);
   box-shadow: inset 0px 0px 3px 2px var(--contrast-color-middle),
     inset 0px 0px 6px 5px var(--contrast-color-light);
+}
+.link:hover {
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  box-shadow: inset 0px 0px 3px 2px var(--contrast-color-middle),
+    inset 0px 0px 6px 5px var(--contrast-color-light);
+}
+.link:active {
+  background-color: var(--accent-color);
+  color: var(--basic-color);
+  box-shadow: none;
 }
 .button-container {
   background: linear-gradient(var(--basic-color), var(--bg-color) 70%);
@@ -76,6 +88,6 @@ export default {};
 .bottom-footer {
   background-color: var(--basic-color);
   border-top: 2px solid var(--accent-color);
-  height: 1em;
+  height: 0.8em;
 }
 </style>
