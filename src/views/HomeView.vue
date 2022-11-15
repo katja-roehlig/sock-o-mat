@@ -3,23 +3,13 @@
     <div class="home">
       <img
         src="/img/Socke-Opal-3.png"
-        width="200"
-        height="300"
+        width="250"
+        height="400"
         alt="ein random Foto"
         class="image"
       />
-    </div>
-    <div class="button">
-      <button class="button-style home-button">
-        <router-link :to="{ name: 'create' }" class="button-link"
-          >Neue Socke</router-link
-        >
-      </button>
-      <button class="button-style home-button">
-        <router-link :to="{ name: 'overview' }" class="button-link"
-          >Übersicht</router-link
-        >
-      </button>
+      <div class="button"></div>
+      <button class="button-style">Los geht´s</button>
     </div>
   </BaseLayout>
 </template>
@@ -34,17 +24,15 @@ export default {
 </script>
 <style scoped>
 .home {
-  margin-block: 2em;
   text-align: center;
+  margin-block: 10%;
 }
-.home-button {
-  margin-bottom: 2em;
+
+.image {
+  border: 2px solid var(--contrast-color);
+  border-radius: 7px;
 }
 .button {
-  display: flex;
-  justify-content: space-evenly;
-}
-.image {
-  border: 2px solid var(--basic-color);
+  padding-top: 2em;
 }
 </style>

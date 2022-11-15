@@ -75,7 +75,6 @@
       name="wool"
       id="wool"
       class="input-style wool-text"
-      rows="1"
       v-model="wool"
     />
 
@@ -84,22 +83,18 @@
       name="pattern"
       id="pattern"
       class="input-style pattern-text"
-      rows="1"
       v-model="pattern"
     />
 
     <label for="specials" class="specials-label">Besonderheiten: </label>
     <textarea
-      class="input-style specials-text"
+      class="input-style specials-text frame"
       name="specials"
       id="specials"
       v-model="specials"
     />
 
     <button class="button-style button-safe">Speichern</button>
-    <button class="button-style button-home" @click.prevent>
-      <router-link to="/" class="button-link">⏎</router-link>
-    </button>
   </form>
 </template>
 <!-- Script ******************************************************* -->
@@ -176,7 +171,7 @@ export default {
 <!-- Style ****************************************************** -->
 <style scoped>
 label {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 textarea {
   overflow: visible;
@@ -189,7 +184,9 @@ input:focus {
 }
 
 .form-container {
-  padding: 1.5em 2em;
+  background-color: var(--main-bg-color);
+  padding: 2em 2em 3em 2em;
+
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   grid-column-gap: 0.5em;
@@ -210,7 +207,7 @@ input:focus {
     "pattern-text pattern-text pattern-text"
     "specials-label specials-label specials-label"
     "specials-text specials-text specials-text"
-    "button-safe button-home button-home";
+    "button-safe button-safe button-safe";
 }
 .title-label {
   grid-area: title-label;
@@ -288,22 +285,21 @@ input:focus {
 }
 .input-style {
   background-color: var(--bg-color);
-  padding: 0.4em 0.6em;
+  padding: 0.6em 0.6em;
   margin-bottom: 0.8em;
   border-radius: 5px;
   box-shadow: 2px 2px 3px var(--basic-color);
   border: 1px solid var(--basic-color);
+  line-height: 1.2em;
+  font-size: 1em;
 }
 
 .button-safe {
   grid-area: button-safe;
+  justify-self: center;
+  margin-block: 1em;
 }
-.button-home {
-  grid-area: button-home;
-}
-.button-link {
-  all: unset;
-}
+
 input::placeholder {
   font-size: 0.8em;
 }

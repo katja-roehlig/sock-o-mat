@@ -3,21 +3,6 @@
     <div class="title">
       <h1>SOCK <span class="accent">O</span> MAT</h1>
     </div>
-    <aside class="nav">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="19"
-        height="19"
-        fill="currentColor"
-        class="bi bi-list"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-        />
-      </svg>
-    </aside>
     <div class="subtitle">
       <h2>{{ msg }}</h2>
     </div>
@@ -41,7 +26,7 @@ h1 {
   color: var(--bg-color);
   font-size: 1.7em;
   font-weight: 900;
-  padding-block: 0.7em 0.5em;
+  padding-block: 0.8em 0.6em;
   margin: 0;
   text-shadow: 2px 2px 0px var(--contrast-color);
 }
@@ -73,10 +58,5 @@ h2 {
 }
 .bi {
   color: var(--contrast-color);
-}
-.nav {
-  position: absolute;
-  top: 4.8rem;
-  left: 8%;
 }
 </style>

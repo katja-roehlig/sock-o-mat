@@ -13,3 +13,4 @@ export default {
   components: { BaseLayout, CreateComponent },
 };
 </script>
+<style scoped></style>

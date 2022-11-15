@@ -1,6 +1,6 @@
 <template>
-  <BaseLayout msg="sock.title">
-    <DetailComponent />
+  <BaseLayout :msg="subtitle">
+    <DetailComponent @subtitleSock="handleSubtitle" />
   </BaseLayout>
 </template>
 
@@ -11,6 +11,15 @@ import DetailComponent from "@/components/DetailComponent.vue";
 export default {
   name: "CreateView",
   components: { BaseLayout, DetailComponent },
-  data() {},
+  data() {
+    return {
+      subtitle: "",
+    };
+  },
+  methods: {
+    handleSubtitle(title) {
+      this.subtitle = title;
+    },
+  },
 };
 </script>

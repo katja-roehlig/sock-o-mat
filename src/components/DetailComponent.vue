@@ -45,21 +45,7 @@
       <p class="sock-detail">{{ sock.specials }}</p>
     </div>
   </article>
-  <div class="button-container">
-    <button class="button-style">
-      <router-link class="button-link" :to="{ name: 'overview' }"
-        >Übersicht</router-link
-      >
-    </button>
-    <button class="button-style">
-      <router-link to="/" class="button-link">Home</router-link>
-    </button>
-    <button class="button-style">
-      <router-link :to="{ name: 'create' }" class="button-link"
-        >Neue Socke</router-link
-      >
-    </button>
-  </div>
+  <button class="button-style">Bearbeiten</button>
 </template>
 
 <!-- Script ******************************************************-->
@@ -87,6 +73,7 @@ export default {
     this.sock = this.socks.find(
       (element) => element.id === this.$route.params.id
     );
+    this.getSubtitle();
   },
   emits: ["subtitleSock"],
 };
@@ -170,13 +157,7 @@ export default {
   box-shadow: 2px 2px 3px var(--contrast-color);
   border: 1px solid var(--contrast-color);
 }
-.button-container {
-  display: flex;
-  justify-content: space-around;
-  padding-block: 1em 2em;
-  background-color: var(--bg-color);
-  border-top: 2px solid var(--accent-color);
-}
+
 .image-zoom {
   display: flex;
   justify-content: center;
