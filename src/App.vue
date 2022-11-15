@@ -78,7 +78,7 @@ h1 {
   font-family: "Orbitron", sans-serif;
 }
 html {
-  font-family: "SourceSansPro";
+  font-family: "SourceSansPro", sans-serif;
 }
 
 /*Navigation-Style********************************************************************** */

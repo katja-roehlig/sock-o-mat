@@ -1,5 +1,5 @@
 <template>
-  <BaseLayout msg="Sockenstricken mal anders">
+  <BaseLayout msg="Organisiere deine Socken">
     <div class="home">
       <img
         src="/img/Socke-Opal-3.png"
