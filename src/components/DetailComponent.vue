@@ -5,47 +5,46 @@
         <img
           :src="sock.image"
           style="width: 100%; height: 100%; object-fit: contain"
-          alt="Hier fehlt ein Foto"
+          alt="Schade! Kein Foto!"
           :class="{ visible: isVisible }"
           @click="zoomImage"
           class="foto-style"
         />
       </div>
     </div>
-    <div class="size">
+    <div class="size" v-if="sock.size !== ''">
       <h3>Größe:</h3>
       <p class="sock-detail">{{ sock.size }}</p>
     </div>
-    <div class="stitches">
+    <div class="stitches" v-if="sock.stitches !== ''">
       <h3>Maschen:</h3>
       <p class="sock-detail">{{ sock.stitches }}</p>
     </div>
-    <div class="cuff">
+    <div class="cuff" v-if="sock.cuff !== ''">
       <h3>Bündchen:</h3>
       <p class="sock-detail">{{ sock.cuff }}</p>
     </div>
-    <div class="heel">
+    <div class="heel" v-if="sock.heel !== ''">
       <h3>Ferse</h3>
       <p class="sock-detail">{{ sock.heel }}</p>
     </div>
-    <div class="toe">
+    <div class="toe" v-if="sock.toe !== ''">
       <h3>Spitze</h3>
       <p class="sock-detail">{{ sock.toe }}</p>
     </div>
-    <div class="wool">
+    <div class="wool" v-if="sock.wool !== ''">
       <h3>Wolle</h3>
       <p class="sock-detail">{{ sock.wool }}</p>
     </div>
-    <div class="pattern">
+    <div class="pattern" v-if="sock.pattern !== ''">
       <h3>Muster</h3>
       <p class="sock-detail">{{ sock.pattern }}</p>
     </div>
-    <div class="specials">
+    <div class="specials" v-if="sock.specials !== ''">
       <h3>Besonderheiten</h3>
       <p class="sock-detail">{{ sock.specials }}</p>
     </div>
   </article>
-  <button class="button-style">Bearbeiten</button>
 </template>
 
 <!-- Script ******************************************************-->

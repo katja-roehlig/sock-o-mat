@@ -7,7 +7,7 @@
         id="suche"
         class="search-input"
         placeholder="Gib einen
-  Suchbegriff ein."
+  Suchbegriff ein"
         v-model="result"
         autocomplete="off"
       />
