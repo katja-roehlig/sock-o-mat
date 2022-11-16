@@ -153,7 +153,6 @@ export default {
         specials: this.specials,
       };
       this.socks.push(sockProject);
-      console.log(this.socks);
       localStorage.setItem("safeSocks", JSON.stringify(this.socks));
       this.$router.push("/detail/" + sockProject.id);
     },

@@ -168,7 +168,7 @@ export default {
 }
 .visible {
   transition: transform 1s ease-out;
-  transform: scale(2);
+  transform: scale(1.8);
   transform-origin: 0% 0%;
 }
 </style>

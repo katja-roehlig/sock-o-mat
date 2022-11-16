@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       socks: JSON.parse(localStorage.getItem("safeSocks")),
-      search: "",
+      shit: "",
     };
   },
   methods: {
@@ -50,18 +50,18 @@ export default {
       }
       localStorage.setItem("safeSocks", JSON.stringify(this.socks));
     },
+
     searchSocks(result) {
-      this.search = result;
+      this.shit = result;
       if (this.search === "") {
         this.socks = JSON.parse(localStorage.getItem("safeSocks"));
       } else {
-        this.socks = this.socks.filter(
-          (element) =>
-            element.pattern ||
-            element.heel ||
-            element.wool ||
-            element.toe === this.search
-        );
+        this.socks = this.socks.filter((element) => {
+          element.pattern === this.shit ||
+            element.heel === this.shit ||
+            element.wool === this.shit ||
+            element.toe === this.shit;
+        });
       }
     },
   },
