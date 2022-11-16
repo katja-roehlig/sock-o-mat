@@ -52,7 +52,7 @@
     />
 
     <label for="heel" class="heel-label">Ferse </label>
-    <input
+    <textarea
       type="text"
       name="heel"
       id="heel"
@@ -61,7 +61,7 @@
     />
 
     <label for="toe" class="toe-label">Spitze </label>
-    <input
+    <textarea
       type="text"
       name="toe"
       id="toe"
@@ -153,7 +153,6 @@ export default {
         specials: this.specials,
       };
       this.socks.push(sockProject);
-      console.log(this.socks);
       localStorage.setItem("safeSocks", JSON.stringify(this.socks));
       this.$router.push("/detail/" + sockProject.id);
     },
@@ -224,7 +223,6 @@ input:focus {
   font-size: 0.7em;
   width: 100%;
   padding-block: 1em;
-  height: 80%;
   margin-bottom: 2em;
 }
 .size-label {
@@ -297,7 +295,7 @@ input:focus {
 .button-safe {
   grid-area: button-safe;
   justify-self: center;
-  margin-block: 1em;
+  margin-block: 0.8em;
 }
 
 input::placeholder {
@@ -314,4 +312,7 @@ input::placeholder {
 }
 
 /****IDs ******************************************* */
+#title {
+  margin-bottom: 1em;
+}
 </style>

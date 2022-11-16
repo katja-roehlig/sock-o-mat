@@ -9,7 +9,11 @@
         class="image"
       />
       <div class="button"></div>
-      <button class="button-style">Los geht´s</button>
+      <button class="button-style">
+        <router-link :to="{ name: 'create' }" class="button-link"
+          ><span class="new">Los geht´s</span></router-link
+        >
+      </button>
     </div>
   </BaseLayout>
 </template>
@@ -33,6 +37,6 @@ export default {
   border-radius: 7px;
 }
 .button {
-  padding-top: 2em;
+  padding-top: 1em;
 }
 </style>

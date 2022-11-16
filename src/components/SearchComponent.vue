@@ -7,9 +7,9 @@
         id="suche"
         class="search-input"
         placeholder="Gib einen
-  Suchbegriff ein."
-        v-model="result"
+  Suchbegriff ein"
         autocomplete="off"
+        v-model="result"
       />
       <button class="search-button">
         <svg
@@ -56,7 +56,6 @@ export default {
 }
 .search-button {
   position: absolute;
-
   width: 80%px;
   background-color: white;
   border: transparent;
