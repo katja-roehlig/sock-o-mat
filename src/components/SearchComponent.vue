@@ -6,9 +6,7 @@
         name="suche"
         id="suche"
         class="search-input"
-        placeholder="Gib einen
-  Suchbegriff ein"
-        autocomplete="off"
+        placeholder="Gib einen Suchbegriff ein."
         v-model="result"
       />
       <button class="search-button">

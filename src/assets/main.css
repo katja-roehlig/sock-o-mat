@@ -23,11 +23,12 @@ html {
 /****Font-Styling********************************************************************** */
 @font-face {
   font-family: "Orbitron";
-  src: url("@/assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf");
+  src: url(@/assets/fonts/Orbitron-ExtraBold.woff2);
+  font-weight: 800;
 }
 @font-face {
   font-family: "SourceSansPro";
-  src: url("@/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
+  src: url(@/assets/fonts/SourceSansPro-Regular.woff2);
   font-weight: 400;
 }
 

@@ -52,16 +52,17 @@ export default {
     },
 
     searchSocks(result) {
-      this.shit = result;
+      this.search = result;
       if (this.search === "") {
         this.socks = JSON.parse(localStorage.getItem("safeSocks"));
       } else {
-        this.socks = this.socks.filter((element) => {
-          element.pattern === this.shit ||
-            element.heel === this.shit ||
-            element.wool === this.shit ||
-            element.toe === this.shit;
-        });
+        this.socks = this.socks.filter(
+          (element) =>
+            element.pattern ||
+            element.heel ||
+            element.wool ||
+            element.toe === this.search
+        );
       }
     },
   },
