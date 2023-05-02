@@ -1,17 +1,11 @@
 <template>
-  <div class="size-main">
-    <HeaderComponent :msg="msg" />
-    <!--
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <router-link :to="{ name: 'create' }">Neue Socke</router-link>|
-    <router-link :to="{ name: 'overview' }">Überblick</router-link>|
-    <router-link :to="{ name: 'detail' }">Einzelne Socke</router-link>
-  </nav>-->
-    <slot />
+  <div class="main__container">
+    <div class="size-main">
+      <HeaderComponent :msg="msg" />
+      <slot />
+    </div>
+    <FooterComponent class="footer" />
   </div>
-  <FooterComponent class="footer" />
 </template>
 
 <script>
@@ -25,3 +19,14 @@ export default {
   },
 };
 </script>
+<style scoped>
+.main__container {
+  position: relative;
+}
+.footer {
+  position: sticky;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+}
+</style>
